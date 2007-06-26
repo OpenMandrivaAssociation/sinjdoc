@@ -69,6 +69,7 @@ export LD_LIBRARY_PATH=%{_libdir}/gcj_bc-4.3:$LD_LIBRARY_PATH
 rm -rf $RPM_BUILD_ROOT
 
 %jpackage_script net.cscott.sinjdoc.Main %nil %nil %name:java_cup-runtime %name
+
 chmod a+x %{buildroot}%{_bindir}/sinjdoc
 
 install -d 755 $RPM_BUILD_ROOT%{_javadir}
