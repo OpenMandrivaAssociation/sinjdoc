@@ -57,6 +57,11 @@ automake
 autoconf
 export JAVA=%java
 
+%if %with bootstrap
+# (anssi) run ecj with libgcj9 instead of libgcj7 (libgcj8 could work as well)
+export LD_LIBRARY_PATH=%{_libdir}/gcj_bc-4.3:$LD_LIBRARY_PATH
+%endif
+
 %configure2_5x
 %make
 
