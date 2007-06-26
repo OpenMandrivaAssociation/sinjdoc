@@ -27,12 +27,12 @@ BuildRequires:	ecj-bootstrap
 BuildRequires:	java_cup >= 0.10
 BuildRequires:	java
 BuildRequires:	jpackage-utils
+BuildRequires:  java-gcj-compat-devel
 Requires:       java_cup >= 0.10
 Requires:	java
 Requires:	jpackage-utils
 
 %if %{gcj_support}
-BuildRequires:  java-gcj-compat-devel
 Requires(post): java-gcj-compat
 Requires(postun): java-gcj-compat
 %else
