@@ -1,6 +1,6 @@
 
 %define gcj_support 1
-%bcond_without	bootstrap
+%bcond_with	bootstrap
 
 %if %with bootstrap
 %define gcj_support 0
@@ -8,7 +8,7 @@
 
 Name:           sinjdoc
 Version:        0.5
-Release:        %mkrel 4.1
+Release:        %mkrel 4.2
 Summary:        Documentation generator for Java source code
 Group:          Development/Java
 License:        GPL
