@@ -8,7 +8,7 @@
 
 Name:           sinjdoc
 Version:        0.5
-Release:        %mkrel 4.2
+Release:        %mkrel 4.3
 Summary:        Documentation generator for Java source code
 Group:          Development/Java
 License:        GPL
@@ -16,7 +16,7 @@ URL:            http://www.cag.lcs.mit.edu/~cananian/Projects/GJ/sinjdoc-latest/
 Source0:        %name-%version.tar.bz2
 Patch0:         sinjdoc-annotations.patch
 Patch1:         sinjdoc-autotools-changes.patch
-BuildRoot:      %{_tmppath}/%{name}-root
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %if %without bootstrap
 BuildRequires:	eclipse-ecj
@@ -50,25 +50,27 @@ documentation from Java source code
 %setup -q
 %patch0 -p0
 %patch1 -p0
+%{__perl} -pi -e 's|javac|%{javac}|' configure.ac
+%{__aclocal}
+%{__automake}
+%{__autoconf}
 
 %build
-aclocal
-automake
-autoconf
-export JAVA=%java
+export JAR=%{jar}
+export JAVA=%{java}
 
 %if %with bootstrap
 # (anssi) run ecj with libgcj9 instead of libgcj7 (libgcj8 could work as well)
 export LD_LIBRARY_PATH=%{_libdir}/gcj_bc-4.3:$LD_LIBRARY_PATH
 %endif
 
-%configure2_5x
-%make
+%{configure2_5x}
+%{make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%jpackage_script net.cscott.sinjdoc.Main %nil %nil %name:java_cup-runtime %name
+%jpackage_script net.cscott.sinjdoc.Main %{nil} %{nil} %{name}:java_cup-runtime %{name}
 
 chmod a+x %{buildroot}%{_bindir}/sinjdoc
 
@@ -93,10 +95,11 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %files
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 %doc AUTHORS ChangeLog COPYING README
-%{_bindir}/sinjdoc
+%attr(0755,root,root) %{_bindir}/sinjdoc
 %{_javadir}/sinjdoc.jar
 %if %{gcj_support}
-%{_libdir}/gcj/%{name}
+%dir %{_libdir}/gcj/%{name}
+%attr(-,root,root) %{_libdir}/gcj/%{name}/*
 %endif
