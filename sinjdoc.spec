@@ -8,7 +8,7 @@
 
 Name:           sinjdoc
 Version:        0.5
-Release:        %mkrel 4.4
+Release:        %mkrel 4.5
 Summary:        Documentation generator for Java source code
 Group:          Development/Java
 License:        GPL
@@ -27,7 +27,7 @@ BuildRequires:  ecj-bootstrap
 
 BuildRequires:  java_cup >= 0.10
 BuildRequires:  java
-BuildRequires:  jpackage-utils
+BuildRequires:  java-rpmbuild
 BuildRequires:  java-gcj-compat-devel
 Requires:       java_cup >= 0.10
 Requires:       java
