@@ -17,7 +17,6 @@ Source0:        %name-%version.tar.bz2
 Patch0:         sinjdoc-annotations.patch
 Patch1:         sinjdoc-autotools-changes.patch
 Patch2:         sinjdoc-0.5-doclet.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %if %without bootstrap
 BuildRequires:  eclipse-ecj
