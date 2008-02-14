@@ -11,6 +11,7 @@ Version:        0.5
 Release:        %mkrel 4.5
 Summary:        Documentation generator for Java source code
 Group:          Development/Java
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:        GPL
 URL:            http://www.cag.lcs.mit.edu/~cananian/Projects/GJ/sinjdoc-latest/
 Source0:        %name-%version.tar.bz2
