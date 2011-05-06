@@ -8,7 +8,7 @@
 
 Name:           sinjdoc
 Version:        0.5
-Release:        %mkrel 4.9
+Release:        %mkrel 4.10
 Summary:        Documentation generator for Java source code
 Group:          Development/Java
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
