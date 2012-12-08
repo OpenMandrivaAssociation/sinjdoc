@@ -102,3 +102,57 @@ rm -rf %{buildroot}
 %dir %{_libdir}/gcj/%{name}
 %attr(-,root,root) %{_libdir}/gcj/%{name}/*
 %endif
+
+
+%changelog
+* Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 0.5-4.10mdv2011.0
++ Revision: 669981
+- mass rebuild
+
+* Wed Feb 16 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.5-4.9
++ Revision: 638011
+- Rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 0.5-4.8mdv2011.0
++ Revision: 607538
+- rebuild
+
+* Wed Mar 17 2010 Oden Eriksson <oeriksson@mandriva.com> 0.5-4.7mdv2010.1
++ Revision: 524076
+- rebuilt for 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 0.5-4.6mdv2010.0
++ Revision: 427141
+- rebuild
+
+* Thu Feb 14 2008 Thierry Vignaud <tv@mandriva.org> 0.5-4.5mdv2009.0
++ Revision: 168245
+- fix no-buildroot-tag
+- kill re-definition of %%buildroot on Pixel's request
+
+* Sun Dec 16 2007 Anssi Hannula <anssi@mandriva.org> 0.5-4.5mdv2008.1
++ Revision: 121022
+- buildrequire java-rpmbuild, i.e. build with icedtea on x86(_64)
+
+* Sat Sep 15 2007 Anssi Hannula <anssi@mandriva.org> 0.5-4.4mdv2008.0
++ Revision: 87362
+- rebuild to filter out autorequires of GCJ AOT objects
+- remove unnecessary Requires(post) on java-gcj-compat
+
+  + David Walluck <walluck@mandriva.org>
+    - replace tabs with spaces
+    - use macro for %%{buildroot}
+    - use more standard buildroot
+    - search for javac before ecj, and use correct javac
+    - call autotools in %%prep, not %%build
+    - set JAR and JAVA to correct values before calling configure
+    - stricter permissions in %%files
+
+* Fri Jun 29 2007 Anssi Hannula <anssi@mandriva.org> 0.5-4.2mdv2008.0
++ Revision: 45789
+- disable bootstrap
+
+* Wed Jun 27 2007 Anssi Hannula <anssi@mandriva.org> 0.5-4.1mdv2008.0
++ Revision: 44804
+- initial Mandriva release
+
