@@ -1,5 +1,5 @@
 
-%define gcj_support 1
+%define gcj_support 0
 %bcond_with        bootstrap
 
 %if %with bootstrap
