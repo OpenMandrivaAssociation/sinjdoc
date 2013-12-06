@@ -8,7 +8,7 @@
 
 Name:           sinjdoc
 Version:        0.5
-Release:        4.11
+Release:        4.12
 Summary:        Documentation generator for Java source code
 Group:          Development/Java
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
